@@ -1,7 +1,9 @@
 .hero {
+    box-shadow: 0px 3px 8px 3px rgba(0, 0, 0, 0.6);
     height: 60vh;
+    margin: 30px;
     position: relative;
-    width: 100vw;
+    max-width: 100vw;
 }
 
 .hero-background {
@@ -11,9 +13,14 @@
     z-index: 2;
 }
 
+.hero, .hero-background {
+    border-radius: 30px;
+}
+
 .portfolio-img {
     background: none;
-    bottom: 0px;
+    border-bottom-right-radius: 30px;
+    bottom: 1px;
     height: 350px;
     position: absolute;
     right: 0px;
