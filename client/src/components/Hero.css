@@ -1,0 +1,21 @@
+.hero {
+    height: 60vh;
+    position: relative;
+    width: 100vw;
+}
+
+.hero-background {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+
+.portfolio-img {
+    background: none;
+    bottom: 0px;
+    height: 350px;
+    position: absolute;
+    right: 0px;
+    z-index: 3;
+}
