@@ -8,6 +8,7 @@ export default function Hero(){
         <div className = "hero">
             <img className = "hero-background" src = {heroBackground} alt = "hero background"/>
             <img className = "portfolio-img" src = {portfolioImg} alt = "Anas' Image"/>
+            <h1 className = "intro-txt">Hi! I Am Anas,<br/>A Data Scientist.</h1>
         </div>
     )
 }
