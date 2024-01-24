@@ -49,6 +49,7 @@
     display: inline-block;
     font-family: "Orbitron", system-ui;
     font-weight: 400;
+    cursor: default;
 }
 
 #insights {

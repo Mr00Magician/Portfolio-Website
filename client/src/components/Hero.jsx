@@ -1,17 +1,35 @@
-import React from "react";
+import React, { useLayoutEffect, useState } from "react";
 import "./Hero.css"
 import heroBackground from "../assets/images/hero section background.png"
 import portfolioImg from "../assets/images/portfolio pic upscaled.png"
 
 export default function Hero(){
 
-    function showInsights() {
-        document.getElementById("insights").style.animation = "show-insights 1s ease both";
+    const [show, setShow] = useState(false);
+    const [insightsBottom, setInsightsBottom] = useState("50px");
+    let insights;
+
+    function setInsightsStyle(){
+        insights = document.getElementById("insights");
+        let style = window.getComputedStyle(insights);
+        setInsightsBottom(style.getPropertyValue("bottom"));
     }
 
-    function hideInsights() {
-        document.getElementById("insights").style.animation = "hide-insights 1s ease both";
+    function moveInsights(){
+        if(insightsBottom === "0px" && !show){
+            insights.style.animation = "hide-insights 1s ease both";
+        }
+        else if(show && insightsBottom === "50px"){
+            insights.style.animation = "show-insights 1s ease both";
+        }
+        else if(!show && insightsBottom === "0px"){
+            insights.style.animation = "hide-insights 1s ease both";
+        }
     }
+
+    useLayoutEffect(setInsightsStyle);
+
+    useLayoutEffect(moveInsights, [show, insightsBottom]);
 
     return (
         <div className = "hero">
@@ -19,8 +37,8 @@ export default function Hero(){
             <img className = "portfolio-img" src = {portfolioImg} alt = "Anas' Image"/>
             <div className = "intro-txt">
                 Hi! I Am Anas,<br/>
-                A <div id = "data" onMouseEnter={showInsights} onMouseLeave={hideInsights}>
-                    Data <div id = "insights-wrapper"><div id = "insights">Insights</div></div>
+                A <div id = "data" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
+                    Data <div id = "insights-wrapper"><div id = "insights" onAnimationEnd={setInsightsStyle}>Insights</div></div>
                 </div> Scientist
             </div>
         </div>
