@@ -33,7 +33,6 @@ export default function Hero(){
 
     return (
         <div className = "hero">
-            <img className = "hero-background" src = {heroBackground} alt = "hero background"/>
             <img className = "portfolio-img" src = {portfolioImg} alt = "Anas' Image"/>
             <div className = "intro-txt">
                 Hi! I Am Anas,<br/>
