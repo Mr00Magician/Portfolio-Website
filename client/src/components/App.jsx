@@ -5,6 +5,8 @@ import Tile from "./Tile";
 
 export default function App() {
     return (
-        <Tile child={Hero} height={"60vh"}/>
+        <div className = "app">
+            <Tile child={Hero} height={"60vh"}/>
+        </div>
     )
 }
